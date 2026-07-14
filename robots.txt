@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://orientherent-demo.netlify.app/sitemap.xml
+Sitemap: https://orientaldemo.netlify.app/sitemap.xml
