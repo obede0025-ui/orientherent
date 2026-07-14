@@ -1,0 +1,37 @@
+[build]
+  publish = "."
+
+# --- Security headers (op alle routes) ---
+[[headers]]
+  for = "/*"
+  [headers.values]
+    # Forceer HTTPS in de browser voor een jaar (+ subdomeinen)
+    Strict-Transport-Security = "max-age=31536000; includeSubDomains; preload"
+    # Geen MIME-sniffing
+    X-Content-Type-Options = "nosniff"
+    # Anti-clickjacking (naast frame-ancestors in de CSP)
+    X-Frame-Options = "DENY"
+    # Beperk verwijzingsinfo naar externe sites
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    # Zet ongebruikte browser-API's uit
+    Permissions-Policy = "geolocation=(), camera=(), microphone=(), payment=(), usb=(), interest-cohort=()"
+    # Content Security Policy — alleen expliciet vertrouwde bronnen
+    Content-Security-Policy = "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; frame-src https://www.openstreetmap.org; connect-src 'self'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'; object-src 'none'; upgrade-insecure-requests"
+
+# --- Caching: assets zijn onveranderlijk (fingerprint via bestandsnaam bij wijziging) ---
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+# --- Caching: lokale libraries (versievast) mogen lang gecachet worden ---
+[[headers]]
+  for = "/vendor/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+# HTML nooit lang cachen zodat updates meteen zichtbaar zijn
+[[headers]]
+  for = "/*.html"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"

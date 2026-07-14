@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Orient Herent — Grill · Pizza · Kebab op de Brusselsesteenweg</title>
+  <meta name="description" content="Orient Herent: kwaliteitskebab, verse pizza en grillgerechten op de Brusselsesteenweg in Herent. Elke dag open vanaf 17u, met een 4,4 op Google.">
+  <link rel="canonical" href="https://orientherent-demo.netlify.app/">
+  <meta name="robots" content="index, follow">
+
+  <!-- Open Graph / social -->
+  <meta property="og:type" content="restaurant">
+  <meta property="og:title" content="Orient Herent — Grill · Pizza · Kebab">
+  <meta property="og:description" content="Kwaliteitskebab, verse pizza en grillgerechten op de Brusselsesteenweg in Herent. 4,4 op Google.">
+  <meta property="og:url" content="https://orientherent-demo.netlify.app/">
+  <meta property="og:image" content="https://orientherent-demo.netlify.app/assets/hero-facade.webp">
+  <meta property="og:locale" content="nl_BE">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <!-- Structured data: rich results in Google (uren, adres, keuken) — dit ontbreekt volledig op de huidige online bestelpagina -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Restaurant",
+    "name": "Orient Herent",
+    "description": "Grill, pizza en kebab op de Brusselsesteenweg in Herent. Italiaanse en Turkse keuken, met de nadruk op kwaliteit.",
+    "url": "https://orientherent-demo.netlify.app/",
+    "image": "https://orientherent-demo.netlify.app/assets/hero-facade.webp",
+    "telephone": "+3216198747",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Brusselsesteenweg 174",
+      "postalCode": "3020",
+      "addressLocality": "Herent",
+      "addressRegion": "Vlaams-Brabant",
+      "addressCountry": "BE"
+    },
+    "geo": { "@type": "GeoCoordinates", "latitude": 50.891473, "longitude": 4.646709 },
+    "servesCuisine": ["Turkse keuken", "Italiaanse keuken", "Grill", "Pizza", "Kebab"],
+    "priceRange": "€",
+    "openingHoursSpecification": [
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": "Monday", "opens": "17:00", "closes": "21:30" },
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Tuesday","Wednesday","Thursday"], "opens": "17:00", "closes": "23:00" },
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Friday","Saturday"], "opens": "17:00", "closes": "00:00" },
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": "Sunday", "opens": "17:00", "closes": "23:00" }
+    ]
+  }
+  </script>
+
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='10' fill='%230d0d0f'/%3E%3Ctext x='32' y='44' font-family='Georgia,serif' font-size='36' font-style='italic' fill='%23c9a24b' text-anchor='middle'%3EO%3C/text%3E%3C/svg%3E">
+  <link rel="preload" href="assets/fonts/playfair-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/playball-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="style.css">
+  <script src="boot.js"></script>
+</head>
+<body>
+
+  <header class="site-header" id="top">
+    <a class="brand" href="#top">
+      <span class="brand-name">Orient</span>
+      <span class="brand-sub">Grill, pizza &amp; kebab</span>
+    </a>
+    <nav class="site-nav" aria-label="Hoofdnavigatie">
+      <a href="#verhaal">Ons verhaal</a>
+      <a href="#sfeer">Sfeer</a>
+      <a href="#kaart">De kaart</a>
+      <a href="#praktisch">Praktisch</a>
+    </nav>
+    <a class="btn btn-accent btn-small" href="tel:+3216198747" rel="noopener">Bel 016 19 87 47</a>
+  </header>
+
+  <!-- ===== HERO: poster-stijl, linksonder uitgelijnd ===== -->
+  <section class="hero">
+    <img class="hero-bg" src="assets/hero-facade.webp" alt="De gevel van Orient Herent aan de Brusselsesteenweg, met het OPEN-bord buiten" fetchpriority="high">
+    <div class="hero-overlay"></div>
+    <div class="hero-content reveal">
+      <p class="eyebrow">Herent · Brusselsesteenweg</p>
+      <h1>Orient</h1>
+      <p class="hero-sub">Kwaliteitskebab, verse pizza en grill. Gemaakt om indruk te maken, niet om snel te zijn.</p>
+      <div class="hero-actions">
+        <a class="btn btn-accent" href="https://order.mydigimenu.com/orient-2" target="_blank" rel="noopener">Bekijk de kaart &amp; bestel</a>
+        <a class="btn btn-ghost" href="tel:+3216198747">Bel 016 19 87 47</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FEITENSTRIP: één regel, geen kaarten ===== -->
+  <section class="strip reveal" aria-label="Waarom Orient Herent">
+    <div class="strip-item"><strong>4,4 / 5</strong><span>op Google</span></div>
+    <div class="strip-item"><strong>Sinds 2022</strong><span>ook op de Oude Markt in Leuven</span></div>
+    <div class="strip-item"><strong>Gratis parking</strong><span>vlak voor de deur</span></div>
+  </section>
+
+  <!-- ===== VERHAAL ===== -->
+  <section class="section verhaal" id="verhaal">
+    <div class="section-text reveal">
+      <h2>Kebab met een goede naam</h2>
+      <p>Orient Herent werd in maart 2022 geopend door Kaan Kandemir en Carolien Mariman, een jong koppel met één duidelijk doel: bewijzen dat kebab geen slechte naam verdient. Waar veel zaken op snelheid mikken, kiest Orient voor verse ingrediënten, een royale kaart en een zaak waar je ook gewoon rustig aan tafel gaat.</p>
+      <p>Het idee werkte: nog geen jaar later opende het koppel een tweede zaak op de Oude Markt in Leuven. In Herent blijft de basis dezelfde: grill, pizza en kebab, klaargemaakt zoals het hoort.</p>
+      <a class="btn btn-ghost-dark" href="#kaart">Naar de kaart</a>
+    </div>
+    <div class="verhaal-beeld reveal">
+      <img class="tilt" src="assets/bar-neon.webp" alt="De bar van Orient Herent, met notenhouten lamellen en het neon Orient-logo" loading="lazy">
+    </div>
+  </section>
+
+  <!-- ===== SFEER: het ene bewuste donkere blok ===== -->
+  <section class="section section-dark" id="sfeer">
+    <div class="section-head reveal">
+      <h2>Welkom bij Orient</h2>
+      <p>Bij ons draait het om meer dan snel iets meenemen. Schuif aan in een fluwelen zithoek onder de warme verlichting en laat je verwennen. Voor een snelle hap of een lange avond met vrienden en familie: je bent hier altijd thuis.</p>
+    </div>
+    <div class="sfeer-grid">
+      <img class="sfeer-img sfeer-tall tilt reveal" src="assets/neon-quote.webp" alt="Neonbord op de plantenwand: Calories don't count on the weekend" loading="lazy">
+      <img class="sfeer-img tilt reveal" src="assets/logo-menu.webp" alt="Het Orient-logo op het tafelmenu, in goud op zwart leer" loading="lazy">
+      <img class="sfeer-img tilt reveal" src="assets/interior-lounge.webp" alt="Zithoek met televisie en groene plantenwand" loading="lazy">
+    </div>
+  </section>
+
+  <!-- ===== DE KAART: bento met featured gerecht ===== -->
+  <section class="section" id="kaart">
+    <div class="section-head reveal">
+      <p class="eyebrow">De kaart</p>
+      <h2>Grill, pizza &amp; kebab</h2>
+      <p>Van verse dürüm tot pizza uit de oven. De volledige kaart met actuele prijzen staat op het bestelplatform; dit is een voorproefje.</p>
+    </div>
+    <div class="menu-cats">
+      <div class="menu-cat reveal">
+        <h3>Grill &amp; kebabschotels</h3>
+        <p>Royale schotels met verse frieten en salade. Kebab, köfte en gemengde grill, gekruid en gegaard zoals het hoort.</p>
+      </div>
+      <div class="menu-cat reveal">
+        <h3>Pizza uit de oven</h3>
+        <p>Van klassiek tot gedurfd, zoals de Pizza Inferno met sambal, kebab en jalapeño. Ruime keuze, ook vegetarisch.</p>
+      </div>
+      <div class="menu-cat reveal">
+        <h3>Dürüm, pita &amp; kapsalon</h3>
+        <p>Vers gevulde wraps en pita's met knapperige groenten, of een goedgevulde kapsalon voor de stevige honger.</p>
+      </div>
+      <div class="menu-cat reveal">
+        <h3>Pasta's &amp; dranken</h3>
+        <p>Spaghetti bolognese, curry chicken pasta en mac 'n cheese. Af te sluiten met een cocktail aan de bar.</p>
+      </div>
+    </div>
+    <p class="menu-note reveal"><a href="https://order.mydigimenu.com/orient-2" target="_blank" rel="noopener">Bekijk de kaart &amp; bestel &rarr;</a></p>
+  </section>
+
+  <!-- ===== PRAKTISCH: licht, rustig afsluiten ===== -->
+  <section class="section section-praktisch" id="praktisch">
+    <div class="section-head reveal">
+      <h2>Openingsuren &amp; contact</h2>
+    </div>
+    <div class="praktisch-grid">
+      <div class="praktisch-info reveal">
+        <ul class="uren">
+          <li><strong>Maandag</strong><span>17u tot 21u30</span></li>
+          <li><strong>Dinsdag tot donderdag</strong><span>17u tot 23u</span></li>
+          <li><strong>Vrijdag &amp; zaterdag</strong><span>17u tot middernacht</span></li>
+          <li><strong>Zondag</strong><span>17u tot 23u</span></li>
+        </ul>
+        <ul class="contact">
+          <li><strong>Adres</strong><span>Brusselsesteenweg 174, 3020 Herent</span></li>
+          <li><strong>Telefoon</strong><span><a href="tel:+3216198747">016 19 87 47</a></span></li>
+          <li><strong>Bestellen</strong><span><a href="https://order.mydigimenu.com/orient-2" target="_blank" rel="noopener">order.mydigimenu.com/orient-2</a></span></li>
+        </ul>
+        <p class="klein">Gratis parking vlak voor de deur. Ook mindervalide toegankelijk.</p>
+      </div>
+      <div class="map reveal">
+        <iframe title="Kaart: Orient Herent, Brusselsesteenweg 174" src="https://www.openstreetmap.org/export/embed.html?bbox=4.6367%2C50.8865%2C4.6567%2C50.8965&amp;layer=mapnik&amp;marker=50.8915%2C4.6467" loading="lazy"></iframe>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <span class="footer-brand">Orient</span>
+    <p>Orient Herent · Brusselsesteenweg 174, 3020 Herent</p>
+    <p class="disclaimer">Dit is een demo-ontwerp en niet de officiële website van Orient Herent. Ontwerp: Obed Agyapong</p>
+  </footer>
+
+  <script src="vendor/gsap.min.js" defer></script>
+  <script src="vendor/ScrollTrigger.min.js" defer></script>
+  <script src="vendor/vanilla-tilt.min.js" defer></script>
+  <script src="main.js" defer></script>
+</body>
+</html>
